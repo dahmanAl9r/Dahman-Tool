@@ -82,7 +82,10 @@ if choose == '5':
     file = input("> enter the file name : ")
     
     with open(file , mode='r') as f:
-        for line in f:
-            line = line.strip()
-            if md5(line.encode()).hexdigest() == hash :
-                print("[-] password is found : "+ line)
+       try:
+              for line in f:
+              line = line.strip()
+              if md5(line.encode()).hexdigest() == hash :
+                     print("[-] password is found : "+ line)
+       except:
+              print("password not founeded :(")
